@@ -1,0 +1,36 @@
+@charset "UTF-8"; 
+
+body {
+    background-color: #FBDA9A;
+}
+
+#curva {
+    width: 200px;
+    height: 250px;
+}
+
+#cordada {
+    width: 200px;
+    height: 250px;
+}
+
+#agua {
+    width: 200px;
+    height: 250px;
+}
+
+#tapecontent {
+    width: 300px;
+    height: 300px;
+}
+
+.container {
+    display: flex;
+    gap: 5px;
+}
+
+
+
+
+
+

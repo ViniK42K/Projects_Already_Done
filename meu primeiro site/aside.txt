@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Espaço entre imagem e texto */
+}
+
+.imagem {
+    width: 100px; /* Ajuste o tamanho conforme necessário */
+    height: auto;
+}
+
+.texto {
+    max-width: 600px; /* Limite o tamanho do texto conforme necessário */
+}
+
+---------------------------------------------------
+
+    <aside class="container">
+        <img src="sua-imagem.jpg" alt="Descrição da Imagem" class="imagem">
+        <p class="texto">Aqui está um texto ao lado da imagem. Você pode ajustar o texto e a imagem conforme necessário.</p>
+    </aside>
