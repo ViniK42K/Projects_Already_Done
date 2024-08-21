@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soger</title>
+    <link rel="stylesheet" href="../CSSs/CSSprincipal.css"> 
+    <link rel="stylesheet" href="../CSSs/CSSsecundario.css">
+</head>
+<body>
+    <div class="navbar">
+        <div style="float: left;">
+            <img width=90px src="../imagens/sogggs.png" alt="Imagem 1">   
+        </div>
+    
+        <h2>
+            <ul>
+                <button class="button type1" onclick="window.location.href='sogg1.html'">home</button>
+                <button class="button type1" onclick="window.location.href='teubu1.html'">estoque</button>
+                <button class="button type1" onclick="window.location.href='agenda1.html'">agenda</button>
+            </ul>
+        </h2>
+    </div>
+   
+    <br>
+    <div class="form-container">
+        <fieldset>
+            <legend>novo produto</legend>
+            <form id="formularioNovoProduto">
+                <label for="nome">Nome do produto:</label> 
+                <input type="text" name="nome" id="nomeNovoProduto">
+                <br>
+                <div>
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="number" name="quantidade" id="quantidadeNovoProduto">
+                    <div style="float: right;">
+                        <div class="parent">
+                            <select id="tipoNovoProduto">
+                                <option value="caixa 10 uni">caixa 10 uni</option>
+                                <option value="caixa 20 uni">caixa 20 uni</option>
+                                <option value="saco 20 kg">saco 20 kg</option>
+                                <option value="saco 30 kg">saco 30 kg</option>
+                            </select>
+                        </div>  
+                    </div>
+                </div>
+                <label for="nota_fiscal">Nota fiscal (PDF):</label>
+                <input type="file" name="nota_fiscal_pdf" id="nota_fiscal_pdfNovoProduto" class="custom-file-input">
+                <br>
+                <label for="descricao">Descrição:</label> 
+                <input type="text" name="descricao" id="descricaoNovoProduto">
+                <br>
+                <label for="data_entrada">Data de entrada:</label>
+                <input type="date" name="data_entrada" id="data_entradaNovoProduto">
+                <br>
+                <label for="data_validade">Data de validade:</label>
+                <input type="date" name="data_validade" id="data_validadeNovoProduto">
+                <br>
+                <input type="submit" value="Enviar">
+            </form>
+        </fieldset>       
+        <div id="tabela"></div>
+    </div>
+
+    <div class="form-container">
+        <fieldset>
+            <legend>entrada</legend>
+            <form id="formularioEntrada">
+                <label for="nomeEntrada">Nome do produto:</label> 
+                <input type="text" name="nomeEntrada" id="nomeEntrada">
+                <br>
+                <label for="quantidadeEntrada">Quantidade entrando:</label>
+                <input type="number" name="quantidadeEntrada" id="quantidadeEntrada">
+                <br>
+                <input type="submit" value="Enviar">
+            </form>
+        </fieldset>       
+    </div>
+
+    <div class="form-container">
+        <fieldset>
+            <legend>saida</legend>
+            <form id="formularioSaida">
+                <label for="nomeSaida">Nome do produto:</label> 
+                <input type="text" name="nomeSaida" id="nomeSaida">
+                <br>
+                <label for="quantidadeSaida">Quantidade saindo:</label>
+                <input type="number" name="quantidadeSaida" id="quantidadeSaida">
+                <br>
+                <input type="submit" value="Enviar">
+            </form>
+        </fieldset>       
+    </div>
+
+    <script>
+        let produtos = [];
+
+        // Função para salvar os dados no armazenamento local
+        function salvarDadosLocalmente() {
+            localStorage.setItem('produtos', JSON.stringify(produtos));
+        }
+
+        // Função para carregar os dados do armazenamento local
+        function carregarDadosLocalmente() {
+            const produtosArmazenados = localStorage.getItem('produtos');
+            if (produtosArmazenados) {
+                produtos = JSON.parse(produtosArmazenados);
+                atualizarTabela();
+            }
+        }
+
+        // Adicione esta chamada de função para carregar dados quando o site é carregado
+        carregarDadosLocalmente();
+
+        // Adicione esta função para atualizar a tabela de produtos
+        function atualizarTabela() {
+            let tabelaHTML = `
+                <table border="1">
+                    <tr>
+                        <th>Nome do Produto</th>
+                        <th>Quantidade</th>
+                        <th>Tipo</th>
+                        <th>Nota Fiscal</th>
+                        <th>Descrição</th>
+                        <th>Data de Entrada</th>
+                        <th>Data de Validade</th>
+                    </tr>
+            `;
+            
+            produtos.forEach(produto => {
+                tabelaHTML += `
+                    <tr>
+                        <td>${produto.nome}</td>
+                        <td>${produto.quantidade}</td>
+                        <td>${produto.tipo}</td>
+                        <td><a href="${produto.notaFiscal}" target="_blank">Abrir</a></td>
+                        <td>${produto.descricao}</td>
+                        <td>${produto.dataEntrada}</td>
+                        <td>${produto.dataValidade}</td>
+                    </tr>
+                `;
+            });
+
+            tabelaHTML += `</table>`;
+
+            document.getElementById('tabela').innerHTML = tabelaHTML;
+        }
+
+        // Modifique as funções existentes para salvar os dados localmente após cada alteração
+        document.getElementById('formularioNovoProduto').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const nome = document.getElementById('nomeNovoProduto').value;
+            const quantidade = parseInt(document.getElementById('quantidadeNovoProduto').value);
+            const tipo = document.getElementById('tipoNovoProduto').value;
+            const descricao = document.getElementById('descricaoNovoProduto').value;
+            const dataEntrada = document.getElementById('data_entradaNovoProduto').value;
+            const dataValidade = document.getElementById('data_validadeNovoProduto').value;
+
+            // Obtém o arquivo PDF selecionado pelo usuário
+            const fileInput = document.getElementById('nota_fiscal_pdfNovoProduto');
+            const notaFiscalFile = fileInput.files[0];
+
+            // Verifica se um arquivo foi selecionado
+            if (notaFiscalFile) {
+                // Aqui você pode enviar o arquivo para o servidor ou realizar outras operações necessárias
+                // Por enquanto, vamos apenas mostrar o nome do arquivo
+                const notaFiscal = notaFiscalFile.name;
+                
+                const produto = {
+                    nome: nome,
+                    quantidade: quantidade,
+                    tipo: tipo,
+                    notaFiscal: notaFiscal,
+                    descricao: descricao,
+                    dataEntrada: dataEntrada,
+                    dataValidade: dataValidade
+                };
+
+                produtos.push(produto);
+
+                atualizarTabela();
+                salvarDadosLocalmente();
+            } else {
+                // Caso nenhum arquivo seja selecionado
+                alert("Por favor, selecione um arquivo PDF para a nota fiscal.");
+            }
+        });
+
+        document.getElementById('formularioEntrada').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nomeEntrada = document.getElementById('nomeEntrada').value;
+            const quantidadeEntrada = parseInt(document.getElementById('quantidadeEntrada').value);
+
+            const produtoExistente = produtos.find(produto => produto.nome === nomeEntrada);
+
+            if (produtoExistente) {
+                produtoExistente.quantidade += quantidadeEntrada;
+                atualizarTabela();
+                salvarDadosLocalmente();
+            } else {
+                alert("Produto não encontrado.");
+            }
+        });
+
+        document.getElementById('formularioSaida').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nomeSaida = document.getElementById('nomeSaida').value;
+            const quantidadeSaida = parseInt(document.getElementById('quantidadeSaida').value);
+
+            const produtoExistente = produtos.find(produto => produto.nome === nomeSaida);
+
+            if (produtoExistente) {
+                if (produtoExistente.quantidade >= quantidadeSaida) {
+                    produtoExistente.quantidade -= quantidadeSaida;
+                    atualizarTabela();
+                    salvarDadosLocalmente();
+                } else {
+                    alert("Quantidade insuficiente em estoque.");
+                }
+            } else {
+                alert("Produto não encontrado.");
+            }
+        });
+    </script>
+</body>
+</html>

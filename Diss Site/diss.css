@@ -1,0 +1,43 @@
+body {
+    background-color: dimgrey;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+body {
+    
+        height: 100%;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+    
+}
+
+/*style of the all videos*/
+
+img#duzz {
+    width: 400px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+img#derek {
+    width: 400px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+img#drake {
+    width: 400px;
+    border-radius: 50px;
+    margin-right: 10px;
+}
+
+img#kendrick {
+    width: 400px;
+    border-radius: 50px;
+    margin-right: 10px;
+}

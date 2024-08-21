@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOGER</title>
+    <link rel="stylesheet" href="cssindex.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="loginUsername" placeholder="Username" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+        <h2>Cadastro</h2>
+        <form id="signupForm">
+            <input type="text" id="signupUsername" placeholder="Username" required>
+            <input type="password" id="signupPassword" placeholder="Password" required>
+            <input type="submit" value="Cadastrar">
+        </form>
+    </div>
+
+    <script>
+        // Simulação de armazenamento de usuários
+        let users = [];
+    
+        // Função para cadastro de usuário
+        function signup() {
+            let username = document.getElementById('signupUsername').value;
+            let password = document.getElementById('signupPassword').value;
+    
+            // Verifica se o usuário já existe
+            if (users.some(user => user.username === username)) {
+                alert('Usuário já cadastrado. Por favor, escolha outro nome de usuário.');
+                return false;
+            }
+    
+            // Cria um novo usuário e adiciona à lista
+            users.push({ username, password });
+            alert('Cadastro realizado com sucesso!');
+            return true;
+        }
+    
+        // Event listener para formulário de login
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+    
+            let username = document.getElementById('loginUsername').value;
+            let password = document.getElementById('loginPassword').value;
+    
+            // Verifica se o usuário existe e a senha está correta
+            let user = users.find(user => user.username === username && user.password === password);
+            
+            if (user) {
+                alert('Login bem-sucedido!');
+                // Redireciona o usuário para outra página após o login
+                window.location.href = "sogg1.html";
+            } else {
+                alert('Usuário ou senha incorretos. Tente novamente.');
+            }
+        });
+    </script>
+</body>
+</html>

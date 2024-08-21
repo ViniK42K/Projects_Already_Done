@@ -1,0 +1,110 @@
+/* Estilo geral */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo do cabeçalho */
+.navbar {
+  background-color: #ccc;
+  color: white;
+  padding: 10px;
+}
+
+.navbar img {
+  margin-right: 10px;
+}
+
+
+
+
+
+/* Estilo do formulário e dos campos */
+fieldset {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+legend {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #555;
+}
+
+/* Estilo da tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #333;
+  color: white;
+}
+.custom-file-input {
+  display: inline-block;
+  position: relative;
+  font-size: 16px;
+  color: #fff;
+  background-color: #333;
+  border-color: #333;
+  border-radius: 5px;
+  padding: 8px 20px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.custom-file-input:hover {
+  background-color: #333;
+}
+
+.custom-file-input:active {
+  background-color: #333;
+}
+
+.custom-file-input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(34, 35, 35, 0.25);
+}
+.form-container {
+  float: left;
+  margin-right: 20px; /* Espaçamento entre os formulários */
+}

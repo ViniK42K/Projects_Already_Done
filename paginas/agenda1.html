@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,
+        initial-scale=1.0">
+        <title>Soger</title>
+
+        <link rel="stylesheet" href="../CSSs/CSSprincipal.css"> 
+        <link rel="stylesheet" href="../CSSs/CSSsecundario.css">
+
+    </head>
+<body>
+</head>
+<body>
+<div class="navbar">
+<div style="float: left;">
+<img width=90px src="../imagens/sogggs.png" alt="Imagem 1">
+</div>
+            <h2>
+                <ul>
+                    <button class="button type1" onclick="window.location.href='sogg1.html'">home</button>
+                    <button class="button type1" onclick="window.location.href='teubu1.html'">estoque</button>
+                    <button class="button type1" onclick="window.location.href='agenda1.html'">agenda</button>
+                    
+                </ul>
+            </h2>
+</div>
+        <br>
+    <div class="agenda">
+        <h2>Agendar Evento</h2>
+        <form id="formEvento">
+            <label for="titulo">Título:</label><br>
+            <input type="text" id="titulo" name="titulo"><br>
+            <label for="data">Data:</label><br>
+            <input type="date" id="data" name="data"><br>
+            <label for="descricao">Descrição:</label><br>
+            <textarea id="descricao" name="descricao"></textarea><br><br>
+            <button type="submit">Agendar</button>
+        </form>
+
+        <h2>Eventos Agendados</h2>
+        <div id="eventosAgendados"></div>
+    </div>
+
+    <script>
+        const formEvento = document.getElementById('formEvento');
+        const eventosAgendados = document.getElementById('eventosAgendados');
+
+        formEvento.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const titulo = formEvento.titulo.value;
+            const data = formEvento.data.value;
+            const descricao = formEvento.descricao.value;
+
+            const eventoHtml = `
+                <div class="evento">
+                    <div class="titulo">${titulo}</div>
+                    <div class="data">${data}</div>
+                    <div class="descricao">${descricao}</div>
+                </div>
+            `;
+
+            eventosAgendados.innerHTML += eventoHtml;
+
+            // Limpar o formulário após adicionar o evento
+            formEvento.reset();
+        });
+    </script>
+</body>
+</html>
