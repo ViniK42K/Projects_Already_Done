@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela</title>
+    <style>
+        body {
+            font-family: "#262626";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        table {
+            width: 60px;
+            height: 8px;
+            border-collapse: collapse;
+        }
+
+        th,td {
+            border: 2px solid black;
+            padding: 10px;
+        }
+
+        .top-table {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        #difference {
+            text-align: center;
+        }
+
+        #test-table {
+            width: 70px;
+        }
+
+    </style>
+</head>
+<body>
+    <table>
+        <thead> <!--cabeçario-->
+            <th>Ativo</th>
+            <th>Preço Médio</th>
+            <th>Preço Atual</th>
+            <th>Diferença Média/Atual</th>
+            <th>Quantidade</th>
+            <th>Patrimonio Atual</th>
+            <th id="test-table">Variação hoje</th>
+        </thead>
+
+        <tr> <!--primeira linha-->
+            <td class="top-table">ALZR11</td>
+            <td>R$122,18</td>
+            <td>R$116,30</td>
+            <td id="difference">-4,81%</td>
+            <td>27</td>
+            <td>R$3.140,10</td>
+            <td>R$-22,77 -0,19%</td>
+        </tr>
+
+        <tr> <!--segunda linha-->
+            <td class="top-table">BCRI11</td>
+            <td>R$107,37</td>
+            <td>R$104,51</td>
+            <td id="difference">-2,66%</td>
+            <td>95</td>
+            <td>R$9.928,45</td>
+            <td>R$48,41 0,49%</td>
+        </tr>
+
+        <tr> <!--terceira linha-->
+            <td class="top-table">BRCR11</td>
+            <td>R$66,28</td>
+            <td>R$64,86</td>
+            <td id="difference">-2,14%</td>
+            <td>155</td>
+            <td>R$10.053,30</td>
+            <td>R$115,93 1,14%</td>
+        </tr>
+
+        <tr> <!--quarta linha-->
+            <td class="top-table">CPFF11</td>
+            <td>R$75,87</td>
+            <td>R$7O,96</td>
+            <td id="difference">-6,47%</td>
+            <td>160</td>
+            <td>R$11.353,50</td>
+            <td>R$99,01 0.88%</td>
+        </tr>
+
+        <tr> <!--quinta linha-->
+            <td class="top-table">CPT511</td>
+            <td>R$94,21</td>
+            <td>R$89,50</td>
+            <td id="difference">-5,00%</td>
+            <td>395</td>
+            <td>R$35.352,50</td>
+            <td>R$%56,41 0.16%</td>
+        </tr>
+
+        <tr> <!--sexta linha -->
+            <td class="top-table">DHVA11</td>
+            <td>R$95,84</td>
+            <td>R$96,82</td>
+            <td id="difference">1,02%</td>
+            <td>195</td>
+            <td>R$18.879,90</td>
+            <td>R$3,78 0,02%</td>
+        </tr>
+
+        <tr> <!--sétima linha-->
+            <td class="top-table">HART11</td>
+            <td>R$103,60</td>
+            <td>R$95,03</td>
+            <td id="difference">8,27%</td>
+            <td>435</td>
+            <td>R$31.835,05</td>
+            <td>R$12,78 0,04%</td>
+        </tr>
+
+        <tr> <!--oitava linha-->
+            <td class="top-table">HCTR11</td>
+            <td>R$120,26</td>
+            <td>R$107,90</td>
+            <td id="difference">-10,28%</td>
+            <td>130</td>
+            <td>R$14.027,00</td>
+            <td>R$71,17 0,51%</td>
+        </tr>
+
+        <tr> <!--nona linha-->
+            <td class="top-table">IISMC11</td>
+            <td>R$74,27</td>
+            <td>R$86,00</td>
+            <td id="difference">15.79%</td>
+            <td>50</td>
+            <td>R$4.300,00</td>
+            <td>R$12,86 0,30%</td>
+        </tr>
+
+        <tr> <!--décima linha-->
+            <td class="top-table">IRDM11</td>
+            <td>R$111,59</td>
+            <td>R$100,99</td>
+            <td id="difference">-9.50%</td>
+            <td>180</td>
+            <td>18.178,20</td>
+            <td>R$1.82 0,01%</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,7 +1,117 @@
-@charset "UTF-8"; 
+@charset "UTF-8";
+/*APERTAR A PORRA DO CRTL S */
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: 'Gilda';
+    src: url(/fontes/Bufally.ttf) format('opentype');
+    font-weight: normal;
+}
+
+:root {
+    --cor1: #F7870A;
+    --cor2: #F7C50A;
+    --cor3: #F7A80A; /*Hearder*/
+    --cor4: #F75E0A; /*(mais claro) aside*/
+    --cor5: #F7E20A;
+    --cor6: #FBDA9A; /*background*/
+    /*White 
+    Black  /*letra*/
+
+    --fonte_padrao: Arial, Helvetica, sans-serif;
+    --fonte_destaque: 'Public Sans', Arial;
+    --fonte_gilda: 'Gilda', Arial, Sans-serif
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
 
 body {
-    background-color: #FBDA9A;
+    background-color: var(--cor6);
+    font-family: var(--fonte_padrao);
+}
+
+header {
+    /* da cor 3 para a cor 5, to bottom*/
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor1));
+    min-height: 150px;
+    text-align: center;
+}
+
+header>h1 {
+    color: white;
+    font-family: var(--fonte_destaque);
+    padding-top: 40px;
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.548);
+}
+
+header p {
+    color: white;
+    font-size: 1.2em;
+    max-width: 500px;
+    margin: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-family: var(--fonte_padrao);
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.548);
+}
+
+nav {
+    gap: 3.1rem;
+    background-color: var(--cor1);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.348);
+}
+
+nav > a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.5s;
+}
+
+nav > a:hover {
+    background-color: var(--cor4);
+    color: black;
+    border-radius: 5px;
+}
+
+main {
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.596);
+    border-radius: 0px 0px 10px 10px;
+}
+
+main h1 {
+    color: var(--cor4);
+    font-family: var(--fonte_gilda);
+}
+
+main h2 {
+    font-family: var(--fonte_gilda);
+}
+
+.booksin {
+    text-align: center;
+}
+
+img {
+    width: 450px;
+    height: 400px;
+    padding: 20px;
+    text-align: center;
 }
 
 #curva {
@@ -29,8 +139,15 @@ body {
     gap: 5px;
 }
 
+#vetb {
+    padding: 20px;
+}
 
+aside {
+    padding-bottom: 20px;
+}
 
-
-
-
+footer {
+    background-color: var(--cor4);
+    color: white;
+}
