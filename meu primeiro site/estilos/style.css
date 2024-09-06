@@ -12,10 +12,13 @@
 :root {
     --cor1: #F7870A;
     --cor2: #F7C50A;
-    --cor3: #F7A80A; /*Hearder*/
-    --cor4: #F75E0A; /*(mais claro) aside*/
+    --cor3: #F7A80A;
+    /*Hearder*/
+    --cor4: #F75E0A;
+    /*(mais claro) aside*/
     --cor5: #F7E20A;
-    --cor6: #FBDA9A; /*background*/
+    --cor6: #FBDA9A;
+    /*background*/
     /*White 
     Black  /*letra*/
 
@@ -69,7 +72,7 @@ nav {
     box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.348);
 }
 
-nav > a {
+nav>a {
     color: white;
     padding: 10px;
     text-decoration: none;
@@ -77,7 +80,7 @@ nav > a {
     transition-duration: 0.5s;
 }
 
-nav > a:hover {
+nav>a:hover {
     background-color: var(--cor4);
     color: black;
     border-radius: 5px;
@@ -103,6 +106,12 @@ main h2 {
     font-family: var(--fonte_gilda);
 }
 
+.gs-prin {
+    display: flex;
+    justify-content: center;
+    margin: 8px;
+}
+
 .booksin {
     text-align: center;
 }
@@ -114,17 +123,7 @@ img {
     text-align: center;
 }
 
-#curva {
-    width: 200px;
-    height: 250px;
-}
-
-#cordada {
-    width: 200px;
-    height: 250px;
-}
-
-#agua {
+#books-cont {
     width: 200px;
     height: 250px;
 }
