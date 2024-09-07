@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Macondo&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
+:root {
+    --fonte_de_titulo: 'Bricolage Grotesque';
+    --fonte_de_texto: 'Macondo';
+    --fonte_normal: Arial, Verdana, 'sans-ferif';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100vh;
+    background-color: darkgray;
+    font-family: var(--fonte_normal);
+}
+
+header {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+header>h1 {
+    padding-top: 50px;
+    font-variant: small-caps;
+    font-family: var(--fonte_de_titulo);
+    font-size: 10vh;
+}
+
+header>p {
+    padding-bottom: 50px;
+    font-family: var(--fonte_normal);
+}
+
+section {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    line-height: 2em;
+    padding-left: 35px;
+    font-family: var(--fonte_de_texto);
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+section > p {
+    padding-bottom: 2em;
+}
+
+.normal {
+    background-color: white;
+    color: black;
+}
+
+.h-a-image {
+    background-color: rgb(58, 56, 56);
+    color: white;
+    box-shadow: inset 6px 6px 13px 0px rgba(0, 0, 0, 0.671);
+    background-attachment: fixed;
+}
+
+.h-a-image>p {
+    background-color: rgba(0, 0, 0, 0.705);
+    width: 300px;
+    text-shadow: 2px 1px 0px black;
+}
+
+#img-1 {
+    background-image: url('imagens/imagem1.jpg');
+    background-position: right center;
+    background-size: cover;
+}
+
+#img-2 {
+    background-image: url('imagens/imagem2.jpg');
+    background-position: right center;
+    background-size: cover;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
