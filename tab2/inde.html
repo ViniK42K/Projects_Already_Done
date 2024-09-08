@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 5px;
+            width: 600px;
+            height: 300px;
+            border-collapse: separate;
+            background-color: rgba(216, 213, 213, 0.692);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -70%);
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        tr {
+            text-align: center;
+        }
+
+        /*cores*/
+        #p-top {
+            border-top: 3px solid rgb(133, 130, 130);;
+            background-color: rgba(167, 161, 161, 0.685);
+        }
+
+        #a-top {
+            border-top: 3px solid rgb(98, 170, 98);;
+            background-color: rgba(123, 202, 123, 0.699);
+        }
+
+        #i-top {
+            border-top: 3px solid rgb(47, 143, 207);;
+            background-color: rgba(64, 174, 211, 0.74);
+        }
+
+        #w-top {
+            border-top: 3px solid rgb(143, 113, 150);;
+            background-color: rgba(162, 136, 168, 0.637);
+        }
+
+        #oth-top {
+            border-top: 3px solid rgb(209, 137, 69);;
+            background-color: rgba(197, 133, 95, 0.74);
+        }
+
+    </style>
+</head>
+
+<body>
+    <table>
+
+            <thead>
+                <th id="p-top">Period</th>
+                <th id="a-top">Android</th>
+                <th id="i-top">iOS</th>
+                <th id="w-top">Windows Phone</th>
+                <th id="oth-top">Others</th>
+            </thead>
+
+        <tr> <!--primeira linha-->
+            <td>2016Q1</td>
+            <td>83,4%</td>
+            <td>15,4%</td>
+            <td>0,8%</td>
+            <td>0,4%</td>
+        </tr>
+
+        <tr> <!--segunda linha-->
+            <td>2016Q2</td>
+            <td>87,6%</td>
+            <td>11,7%</td>
+            <td>0,4%</td>
+            <td>0,3%</td>
+        </tr>
+
+        <tr> <!--terceira linha-->
+            <td>2016Q3</td>
+            <td>86,8%</td>
+            <td>12,5%</td>
+            <td>0,3%</td>
+            <td>0,4%</td>
+        </tr>
+
+        <tr> <!--quarta linha-->
+            <td>2016Q4</td>
+            <td>81,4%</td>
+            <td>18,2%</td>
+            <td>0,2%</td>
+            <td>0,2%</td>
+        </tr>
+
+        <tr> <!--quinta linha-->
+            <td>2017Q1</td>
+            <td>85,0%</td>
+            <td>14,7%</td>
+            <td>0,1%</td>
+            <td>0,1%</td>
+        </tr>
+
+    </table>
+</body>
+
+</html>
